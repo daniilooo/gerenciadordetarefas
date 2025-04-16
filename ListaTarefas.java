@@ -3,10 +3,18 @@ import rn.*;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Classe principal do projeto. Responsável pela interface via terminal.
+ * Apresenta o menu interativo para o gerenciamento de tarefas.
+ */
 class listaTarefas {
     public static List<Tarefa> listaTarefas = null;
     public static boolean continuar = true;
 
+    /**
+     * Método principal do programa.
+     * Executa o menu até que o usuário escolha sair.
+     */
     public static void main(String[] args) {
 
         while (continuar) {
@@ -15,6 +23,9 @@ class listaTarefas {
 
     }
 
+    /**
+     * Exibe o menu de opções e executa a ação correspondente.
+     */
     public static void menu() {
         Scanner cmd = new Scanner(System.in);
         int comando = 0;
@@ -135,6 +146,9 @@ class listaTarefas {
 
     }
 
+    /**
+     * Limpa o terminal.
+     */
     public static void limparTela() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
