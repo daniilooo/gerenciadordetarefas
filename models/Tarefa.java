@@ -67,8 +67,26 @@ public class Tarefa {
     /** @return do Objeto tarefa no formato String */
     @Override
     public String toString() {
+
+        String statusTarefa = "";
+
+        switch (this.getStatusTarefa()) {
+            case 0:
+                statusTarefa = "Pendente";
+                break;
+            case 1:
+                statusTarefa = "Andamento";
+                break;
+            case 2:
+                statusTarefa = "Pendente";
+                break;
+            default:
+                statusTarefa = "Status desconhecido";
+                break;
+        }
+
         return "ID tarefa: " + this.getIdTarefa() + " | " + "Tarefa: " + this.getDescricaoTarefa() + " | "
-                + "Status tarefa: " + this.getStatusTarefa();
+                + "Status tarefa: " + statusTarefa;
     }
 
 }
