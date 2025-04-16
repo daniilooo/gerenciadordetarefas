@@ -21,6 +21,8 @@ Trata-se de um gerenciador de tarefas simples feito em **Java puro**, utilizando
 │   └── Tarefa.java
 ├── rn/
 │   └── TarefasRn.java
+├── enums/
+│   └── TarefaStatusEnum.java
 ├── ListaTarefas.java
 
 ```
