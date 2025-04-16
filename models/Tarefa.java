@@ -59,6 +59,11 @@ public class Tarefa {
         return this.statusTarefa;
     }
 
+    /** @return Tarefa em um array */
+    public Object[] toArray() {
+        return new Object[] { this.getIdTarefa(), this.getDescricaoTarefa(), this.getStatusTarefa() };
+    }
+
     /** @return do Objeto tarefa no formato String */
     @Override
     public String toString() {

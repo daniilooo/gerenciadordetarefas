@@ -95,8 +95,11 @@ public class TarefasRn {
                  * 2 - concluida
                  */
                 tarefa.setStatusTarefa(codStatus);
+                return;
             }
         }
+
+        System.out.println("Tarefa não encontrada");
     }
 
     /**
@@ -106,7 +109,21 @@ public class TarefasRn {
      * @param id    ID da tarefa a ser removida
      */
     public void removerTarefa(List<Tarefa> listaTarefa, int idTarefa) {
-        listaTarefa.removeIf(tarefa -> tarefa.getIdTarefa() == idTarefa);
+        // listaTarefa.removeIf(tarefa -> tarefa.getIdTarefa() == idTarefa);
+
+        Tarefa remover = null;
+        for (Tarefa tarefa : listaTarefa) {
+            if (tarefa.getIdTarefa() == idTarefa) {
+                remover = tarefa;
+                break;
+            }
+        }
+
+        if (remover != null) {
+            listaTarefa.remove(remover);
+        } else {
+            System.out.println("Tarefa não encontrada");
+        }
     }
 
     /**
@@ -120,8 +137,10 @@ public class TarefasRn {
         for (Tarefa tarefa : listaTarefa) {
             if (tarefa.getIdTarefa() == idTarefa) {
                 tarefa.setDescricaoTarefa(descricaoTarefa);
+                return;
             }
         }
+        System.out.println("Tarefa não encontrada");
     }
 
 }
