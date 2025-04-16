@@ -47,7 +47,6 @@ git clone https://github.com/daniilooo/gerenciadordetarefas.git
 
 javac .\rn\TarefasRn.java .\models\Tarefa.java .\listaTarefas.java
 
-
 ```
 
 ### 3. Execute o programa:
