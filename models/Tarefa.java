@@ -1,5 +1,7 @@
 package models;
 
+import enums.*;
+
 /**
  * Classe que representa uma tarefa na lista de tarefas.
  * Contém id, descrição e status da tarefa.
@@ -14,7 +16,7 @@ package models;
 public class Tarefa {
     private int idTarefa;
     private String descricaoTarefa;
-    private int statusTarefa;
+    private TarefaStatusEnum statusTarefa;
 
     /**
      * Construtor da Tarefa.
@@ -23,7 +25,7 @@ public class Tarefa {
      * @param descricao Descrição da tarefa
      * @param status    Status da tarefa (pendente, andamento, concluido)
      */
-    public Tarefa(int idTarefa, String descricaoTarefa, int statusTarefa) {
+    public Tarefa(int idTarefa, String descricaoTarefa, TarefaStatusEnum statusTarefa) {
         this.setIdTarefa(idTarefa);
         this.setDescricaoTarefa(descricaoTarefa);
         this.setStatusTarefa(statusTarefa);
@@ -40,7 +42,7 @@ public class Tarefa {
     }
 
     /** @param status Define o status da tarefa */
-    public void setStatusTarefa(int statusTarefa) {
+    public void setStatusTarefa(TarefaStatusEnum statusTarefa) {
         this.statusTarefa = statusTarefa;
     }
 
@@ -55,7 +57,7 @@ public class Tarefa {
     }
 
     /** @return Status da tarefa */
-    public int getStatusTarefa() {
+    public TarefaStatusEnum getStatusTarefa() {
         return this.statusTarefa;
     }
 
@@ -71,17 +73,20 @@ public class Tarefa {
         String statusTarefa = "";
 
         switch (this.getStatusTarefa()) {
-            case 0:
+            case PENDENTE:
                 statusTarefa = "Pendente";
                 break;
-            case 1:
+            case ANDAMENTO:
                 statusTarefa = "Andamento";
                 break;
-            case 2:
-                statusTarefa = "Pendente";
+            case CONCLUIDO:
+                statusTarefa = "Concluído";
+                break;
+            case DESCONHECIDO:
+                statusTarefa = "Status desconhecido";
                 break;
             default:
-                statusTarefa = "Status desconhecido";
+                statusTarefa = "Status inválido";
                 break;
         }
 

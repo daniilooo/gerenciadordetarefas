@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import enums.*;
 import models.*;
 
 /**
@@ -36,7 +37,7 @@ public class TarefasRn {
         descricaoTarefa = sc.nextLine();
         // sc.close();
 
-        tarefa = new Tarefa(0, descricaoTarefa, 0);
+        tarefa = new Tarefa(0, descricaoTarefa, TarefaStatusEnum.PENDENTE);
         return tarefa;
     }
 
@@ -71,20 +72,20 @@ public class TarefasRn {
      */
     public void alterarStatus(List<Tarefa> listaTarefas, int idTarefa, String status) {
 
-        int codStatus;
+        TarefaStatusEnum codStatus;
 
         switch (status.toLowerCase()) {
             case "pendente":
-                codStatus = 0;
+                codStatus = TarefaStatusEnum.PENDENTE;
                 break;
             case "andamento":
-                codStatus = 1;
+                codStatus = TarefaStatusEnum.ANDAMENTO;
                 break;
             case "concluido":
-                codStatus = 2;
+                codStatus = TarefaStatusEnum.CONCLUIDO;
                 break;
             default:
-                codStatus = 0;
+                codStatus = TarefaStatusEnum.DESCONHECIDO;
         }
 
         for (Tarefa tarefa : listaTarefas) {
