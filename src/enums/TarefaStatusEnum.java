@@ -8,5 +8,5 @@ public enum TarefaStatusEnum {
     PENDENTE,
     ANDAMENTO,
     CONCLUIDO,
-    DESCONHECIDO
+    DESCONHECIDO;
 }

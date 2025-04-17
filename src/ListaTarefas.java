@@ -127,7 +127,6 @@ class listaTarefas {
                 limparTela();
                 System.out.println("Descrição da tarefa alterada com sucesso.");
                 gerenciamentoTarefas.listarTarefas(listaTarefas);
-
                 break;
 
             case 7:
