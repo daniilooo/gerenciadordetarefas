@@ -20,6 +20,8 @@ class listaTarefas {
         while (continuar) {
             menu();
         }
+        
+        System.out.println("Testando github");
     }
 
     /**
